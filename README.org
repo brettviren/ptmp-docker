@@ -1,0 +1,31 @@
+#+title: Docker images for PTMP
+
+* Build
+
+Rebuild image
+
+#+BEGIN_EXAMPLE
+  $ docker build -t brettviren/ptmp-deb debian/
+  $ docker build -t brettviren/ptmp-testing testing/
+#+END_EXAMPLE
+
+* Run
+
+Clone latest, build and test
+
+#+BEGIN_EXAMPLE
+  $ docker run brettviren/ptmp-testing
+#+END_EXAMPLE
+
+Run the base environment
+
+#+BEGIN_EXAMPLE
+  $ docker run -it brettviren/ptmp-testing /bin/bash
+#+END_EXAMPLE
+
+* Push to docker hub
+
+#+BEGIN_EXAMPLE
+  $ docker push brettviren/ptmp-deb
+  $ docker push brettviren/ptmp-testing
+#+END_EXAMPLE
