@@ -1,5 +1,8 @@
 #+title: Docker images for PTMP
 
+
+[[https://travis-ci.org/brettviren/ptmp][https://travis-ci.org/brettviren/ptmp.svg?branch=master]]
+
 * Build
 
 Rebuild image
