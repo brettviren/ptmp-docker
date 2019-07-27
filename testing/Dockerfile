@@ -9,6 +9,9 @@ ENV PATH=/home/${username}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 USER ${username}
 WORKDIR /home/${username}
 
+ADD run.sh /home/${username}/
+RUN chmod +x /home/${username}/run.sh
+
 # CMD git clone --depth 1 https://github.com/brettviren/ptmp.git \
 #  && cd ptmp \
 #  && python3 ./tools/waf configure --prefix=$HOME \
