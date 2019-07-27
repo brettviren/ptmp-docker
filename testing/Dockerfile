@@ -13,4 +13,4 @@ ENV PATH=/home/${username}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 USER ${username}
 WORKDIR /home/${username}
 
-ENTRYPOINT ["/home/testing/run.sh"]
+# ENTRYPOINT ["/home/testing/run.sh"]
