@@ -1,0 +1,43 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - grafana-net
+    volumes:
+      - grafana-volume
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite
+    restart: always
+    ports:
+      - 2003:2003
+      - 8080:8080
+    networks:
+      - grafana-net
+
+networks:
+  grafana-net:
+
+# outside of docker-compose do:
+# docker volume create --name=grafana-volume
+volumes:
+  grafana-volume:
+    external: true
+    
+
+# based on
+# https://www.linode.com/docs/uptime/monitoring/install-graphite-and-grafana/
+# run
+# docker-compose up -d
+# docker ps
+# then visit http://127.0.0.1:3000 for grafana
+# and http://127.0.0.1:8080 for graphite
+# When configuring grafana be sure to use http://graphite:8080 and not http://localhost:8080
+# if your laptop gets too warm then
+# docker-compose down
